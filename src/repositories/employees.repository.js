@@ -17,4 +17,11 @@ export class EmployeesRepository {
             .orderBy('employee.fullName', 'ASC')
             .getMany();
     }
+
+    async findById(id) {
+        return this.repository.findOne({
+            where: { id, isDeleted: false },
+            relations: ['user', 'department', 'position', 'jobGrade', 'directManager', 'hrMentor'],
+        });
+    }
 }
