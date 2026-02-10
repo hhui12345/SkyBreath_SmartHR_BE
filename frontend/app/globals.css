@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  
+  --primary: 210 100% 50%;
+  --primary-foreground: 210 40% 98%;
+  
+  --secondary: 217.2 91.2% 59.8%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  
+  --accent: 262 80% 50%;
+  --accent-foreground: 210 40% 98%;
+  
+  --muted: 210 40% 96%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  
+  --border: 214.3 31.8% 91.4%;
+  
+  --success: 142.3 71.5% 45.7%;
+  --warning: 38.6 92.1% 50.2%;
+  --destructive: 0 84.2% 60.2%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    
+    --primary: 210 100% 50%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 217.2 91.2% 59.8%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    
+    --accent: 262 80% 50%;
+    --accent-foreground: 210 40% 98%;
+    
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 13.8% 74.3%;
+    
+    --border: 217.2 32.6% 17.5%;
+    
+    --success: 142.3 71.5% 45.7%;
+    --warning: 38.6 92.1% 50.2%;
+    --destructive: 0 84.2% 60.2%;
+  }
+}
+
+* {
+  @apply border-border;
+}
+
+body {
+  @apply bg-background text-foreground;
+  font-feature-settings: "rounding-numbers" 1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-foreground/50;
+}
